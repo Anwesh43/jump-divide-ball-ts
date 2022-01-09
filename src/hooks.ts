@@ -61,7 +61,8 @@ export const useStyle = (w : number, h : number, scale : number) => {
     const height = `${size}px`
     return {
         blockStyle(i : number) : CSSProperties {
-            const left : string = `${w / 2 - (1 - 2 * i) * (w / 2 - size / 2) * sc2}px`
+            const a : number = w / 2 - size / 2
+            const left : string = `${a - (1 - 2 * i) * a * sc2}px`
             const top : string = `${h - size - (h / 2 - size / 2) * sc1}px`
             const borderRadius : string = `50%`
             return {
